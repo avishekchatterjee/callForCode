@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+.pull-right {
+  text-align: right;
+  padding: 2rem 5rem 0 0;
+}
+
+.link-alignment {
+  padding: 1rem;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header-box {
+  background-color: lightblue;
+  width: 80%;
+  color: #bd1717;
+  font-size: 20px;
+  padding: 1rem;
+  font-weight: bold;
+  margin: 1rem 7rem;
+  text-align: center;
+}
+
+.details-block-left {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.textbox {
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.left-span {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.submit {
+  text-align: right;
+  padding: 2rem;
+}
+
+.btn {
+  background-color: lightblue;
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.covid-faq-box {
+  background-color: lightblue;
+  width: 70%;
+  color: #820909;
+  font-size: 16px;
+  padding: 1rem;
+  margin: 1rem 5rem;
+}
