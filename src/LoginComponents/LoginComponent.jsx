@@ -20,7 +20,7 @@ export default class LoginComponent extends Component {
                 </div>
                 <div className='textbox'>
                     <span className='left-span'>OTP</span>
-                    <span><input type='text' maxLength='6' /></span>
+                    <span><input type='number' /></span>
                 </div>
                 
                 <div className='submit'>
