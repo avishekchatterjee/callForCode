@@ -12,6 +12,10 @@ export default class Root extends Component {
     render() {
         return (
             <BrowserRouter>
+            <div>
+            <img src="img/CallForCodeLogo.png" width="100" height="100"></img>
+                <label class="font-weight-bold" >Call For Code COVID-2019 Portal</label> 
+            </div>
                 <div className='pull-right heading'>
                     <Link className='link-alignment' to='/signup'>Sign Up</Link>
                     <Link className='link-alignment' to='/login'>Log In</Link>
