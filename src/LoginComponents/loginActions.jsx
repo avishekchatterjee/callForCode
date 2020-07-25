@@ -5,3 +5,7 @@ export const onChangeHandler = (event, stateName) => {
 export const signUp = () => {
     return { type: 'SIGN_UP' }
 }
+
+export const login = () => {
+    return { type: 'LOG_IN' }
+}

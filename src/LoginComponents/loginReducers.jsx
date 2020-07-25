@@ -3,7 +3,9 @@ const initialState = {
     mobNumber: '',
     otp: '',
     areaPin: '',
-    submitted: false
+    loginOtp: '',
+    submitted: false,
+    loggedIn: false
 }
 
 export const loginReducers = (state = initialState, action) => {
@@ -11,7 +13,7 @@ export const loginReducers = (state = initialState, action) => {
         case 'ON_CHANGE':
             let regexMatching = true;
             if (action.payload.stateName === 'otp' || action.payload.stateName === 'mobNumber'
-                || action.payload.stateName === 'areaPin') {
+                || action.payload.stateName === 'areaPin' || action.payload.stateName === 'loginOtp') {
                 let reg = new RegExp('^[0-9]+$');
                 regexMatching = (reg.test(action.payload.value) || action.payload.value === '');
             }
@@ -27,6 +29,11 @@ export const loginReducers = (state = initialState, action) => {
             return {
                 ...state,
                 submitted: true
+            }
+        case 'ON_LOG_IN':
+            return {
+                ...state,
+                loggedIn: true
             }
         default:
             return state;
