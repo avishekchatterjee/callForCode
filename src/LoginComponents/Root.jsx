@@ -13,8 +13,8 @@ export default class Root extends Component {
         return (
             <BrowserRouter>
                 <div className='header'>
-                    <div style={{ width: '10%' }}>
-                        <img src="img/CallForCodeLogo.png" width="100" height="100"></img>
+                    <div style={{ width: '10%', marginBottom: '-4px' }}>
+                        <img src='img/CallForCodeLogo.png' alt='callForCodeImg' width="100" height="100"></img>
                     </div>
                     <div style={{ width: '75%', textAlign: 'center' }}>
                         <label className="header-main" >Call For Code COVID-2019 Portal</label>
