@@ -11,6 +11,17 @@
   padding: 1rem;
 }
 
+body {
+  background-color:darkseagreen;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: darksalmon;
+  justify-content: center;
+}
+
 .heading {
   font-weight: bold;
   font-size: 18px;
@@ -66,4 +77,10 @@
   font-size: 16px;
   padding: 1rem;
   margin: 1rem 5rem;
+}
+
+.header-main {
+  font-size: 45px;
+  font-weight: bold;
+  color: #0f0f71;
 }
