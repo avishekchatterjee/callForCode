@@ -37,6 +37,13 @@ class SignUpComponent extends Component {
                         <span><input type='text' maxLength='6' value={this.props.areaPin}
                             onChange={(e) => this.props.onChangeHandler(e, 'areaPin')} /></span>
                     </div>
+
+                    <div className='textbox'>
+                        <span className='left-span'>Govt ID</span>
+                        <span><input type='text' maxLength='5' value={this.props.govtId}
+                            onChange={(e) => this.props.onChangeHandler(e, 'govtId')} /></span>
+                    </div>
+
                     <div className='submit '>
                         <button className={submitDisabled ? 'btn disabled' : 'btn'} onClick={this.props.signUp}>Sign Up</button>
                     </div>
@@ -61,6 +68,7 @@ const mapStateToProps = state => {
         mobNumber: state.mobNumber,
         otp: state.otp,
         areaPin: state.areaPin,
+        govtId: state.govtId,
         submitted: state.submitted
     }
 }

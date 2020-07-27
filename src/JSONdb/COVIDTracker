@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    COVIDSuspect: true,
+    COVIDConfirm: false,
+    "PatientDetails": [
+      {
+        "PatientID": 'COVID123',
+        "PatientName": 'Madhu',
+        "IsolationStartDate": '',
+        "IsolationEndDate": '',
+        "Address": '',
+        "PinCode": 700001,
+        "PatientCondition": 'Normal',
+        "EmergencyContact": '',
+        "TravelHistory": '',
+        "FamilyDetails": [
+          {
+            "MemberName": '',
+            "RelationShip": '',
+            "patientID": ''
+          },
+          {
+            "MemberName": '',
+            "RelationShip": '',
+            "patientID": 'COVID456'
+          }
+        ]
+      }
+    ],
+    'EntryBy': 12345
+  }
+]
