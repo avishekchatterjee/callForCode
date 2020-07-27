@@ -7,6 +7,8 @@ import Root from './LoginComponents/Root';
 import { loginReducers } from './LoginComponents/loginReducers';
 import { signUp, logIn } from './LoginComponents/loginSagas';
 
+/*Css imports*/
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const sagaMiddleware = createSagaMiddleware();
@@ -16,7 +18,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Root />
+      <div className="main-body">
+        <Root />
+      </div>
     </Provider>
   );
 }
