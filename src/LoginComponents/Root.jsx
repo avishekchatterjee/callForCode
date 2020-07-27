@@ -16,12 +16,33 @@ export default class Root extends Component {
                     <div style={{ width: '10%', marginBottom: '-4px' }}>
                         <img src='img/CallForCodeLogo.png' alt='callForCodeImg' width="100" height="100"></img>
                     </div>
-                    <div style={{ width: '75%', textAlign: 'center' }}>
+                    <div style={{ width: '70%', textAlign: 'center' }}>
                         <label className="header-main" >Call For Code COVID-2019 Portal</label>
                     </div>
-                    <div style={{ width: '15%' }} className='heading'>
+                    <div style={{ width: '20%' }} className='heading'>
                         <Link className='link-alignment' to='/signup'>Sign Up</Link>
-                        <Link className='link-alignment' to='/login'>Log In</Link>
+                        <Link className='link-alignment' to='/login'>Log In</Link>                      
+                        <nav role="navigation">
+                            <ul>                            
+                                <li><a href="#">Donation</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Entry</a></li>
+                                    <li><a href="#">Tracking</a></li>       
+                                </ul>
+                                </li> 
+                            </ul>
+                        </nav>
+                        <nav role="navigation">
+                            <ul>                            
+                                <li><a href="#">COVID</a>
+                                <ul class="dropdown">
+                                    <Link to='/' >Suspect Entry</Link>
+                                    <Link to='/'>Suspect Tracking</Link>
+                                    <Link to='/'>Patient Update</Link> 
+                                </ul>
+                                </li> 
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <Switch>
