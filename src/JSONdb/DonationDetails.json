@@ -1,35 +1,23 @@
 [
   {
     "id": 1,
-    "DonationDetails": [
-      {
-        "ItemDetails": "Medicine",
-        "ItemQuantity": 5,
-        "DonationNote": "",
-        "PinCode": 700001
-      }
-    ]
+    "ItemDetails": "Medicine",
+    "ItemQuantity": 5,
+    "DonationNote": "",
+    "PinCode": 700001
   },
   {
     "id": 2,
-    "DonationDetails": [
-      {
-        "ItemDetails": "Grocery",
-        "ItemQuantity": 10,
-        "DonationNote": "",
-        "PinCode": 700015
-      }
-    ]
+    "ItemDetails": "Grocery",
+    "ItemQuantity": 10,
+    "DonationNote": "",
+    "PinCode": 700015
   },
   {
     "id": 2,
-    "DonationDetails": [
-      {
-        "ItemDetails": "Fruit",
-        "ItemQuantity": 15,
-        "DonationNote": "",
-        "PinCode": 700002
-      }
-    ]
+    "ItemDetails": "Fruit",
+    "ItemQuantity": 15,
+    "DonationNote": "",
+    "PinCode": 700002
   }
 ]

@@ -31,8 +31,9 @@ class CovidSuspectList extends Component {
         const { covidSuspectList, isGovtEmployee } = this.state;
         return (
             <>
+            <div className='header-box'>New Suspect list</div>
                 {covidSuspectList.length > 0 && covidSuspectList.map((row) => {
-                    return (
+                    return (                       
                         <Row key={row.id}>
                             <Col xs={12} sm={6} style={{ height: '10rem' }}>
                                 <Card>
