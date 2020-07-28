@@ -26,8 +26,9 @@ export default class Root extends Component {
                             <ul>                            
                                 <li><a href="#">Donation</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Entry</a></li>
-                                    <li><a href="#">Tracking</a></li>       
+                                    <Link to='/' >Donation Entry</Link>
+                                    <br></br>
+                                    <Link to='/donationTracking'>Donation Tracking</Link>
                                 </ul>
                                 </li> 
                             </ul>
@@ -49,6 +50,7 @@ export default class Root extends Component {
                     <Route exact path="/"><Redirect to="/login" /></Route>
                     <Route exact path='/signup'><SignUpComponent /></Route>
                     <Route exact path='/login'><LogInComponent /></Route>
+                    <Route exact path='/donationTracking'><donationTracking /></Route>
                 </Switch>
             </BrowserRouter>
         )
