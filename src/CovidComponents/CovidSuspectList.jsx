@@ -13,7 +13,7 @@ class CovidSuspectList extends Component {
         super(props);
         this.state = {
             covidSuspectList: [],
-            isGovtEmployee: true
+            isGovtEmployee: false
         }
     }
 
@@ -39,9 +39,18 @@ class CovidSuspectList extends Component {
                                     <Card.Body>
                                         <Card.Title>{row.PatientDetails.PatientName}</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">Covid Status - {row.COVIDConfirm ? 'Confirmed' : 'Not Confirmed'}</Card.Subtitle>
+                                        <Card.Subtitle className="mb-1 text-muted">
+                                            Travel History - {row.PatientDetails.TravelHistory}
+                                        </Card.Subtitle>
+                                        <Card.Subtitle className="mb-1 text-muted">
+                                            Patient Condition - {row.PatientDetails.PatientCondition}
+                                        </Card.Subtitle>                                       
+                                        <Card.Text>                                        
+                                            Address - {row.PatientDetails.Address}
+                                        </Card.Text>
                                         <Card.Text>
                                             Pin - {row.PatientDetails.PinCode}
-                                        </Card.Text>
+                                        </Card.Text>                                       
                                     </Card.Body>
                                 </Card>
                             </Col>
