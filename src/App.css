@@ -149,3 +149,59 @@ ul li ul li {
     clear: both;
   width: 100%;
 }
+
+/***New Addition by Sandipta****/
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.main-body{
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+} 
+
+.nav-links, .nav-links:hover{
+  text-decoration: none;
+}
+
+.portal-title{
+  color: #1d98db;
+  margin: auto;
+  font-size: 1rem;
+  text-shadow: 1px 0px 1px #ffffffba;
+  font-weight: bold;
+}
+
+#basic-navbar-nav{
+  flex-direction: row-reverse;
+}
+
+.container-fluid{
+  padding: 0;  
+}
+
+#basic-navbar-nav.navbar-collapse{
+  flex-grow: 0;
+}
+
+.app-footer{
+  height: 2.5rem;
+  background-color: #343a40;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  color: #fff;
+  padding: 0.5rem;  
+  width: 100%;
+}
+
+.main-div{
+  min-height: calc(100vh - 7rem);
+  overflow: auto;
+  padding: 0.5rem;
+}
