@@ -4,6 +4,11 @@ import LogInComponent from './LoginComponent';
 import SignUpComponent from './SignUpComponent';
 import AppHeader from '../SharedComponents/AppHeader';
 import AppFooter from '../SharedComponents/AppFooter';
+import CovidNewSuspect from '../CovidComponents/CovidSuspect';
+import CovidSuspectList from '../CovidComponents/CovidSuspectList';
+import CovidPatientUpdate from '../CovidComponents/COVIDPatientUpdate';
+import DonationEntry from '../DonationComponents/donationEntry';
+import DonationTracking from '../DonationComponents/donationTracking';
 /**Bootstrap imports**/
 import { Container } from 'react-bootstrap';
 
@@ -55,6 +60,11 @@ export default class Root extends Component {
                                 <Route exact path="/"><Redirect to="/login" /></Route>
                                 <Route exact path='/signup'><SignUpComponent /></Route>
                                 <Route exact path='/login'><LogInComponent /></Route>
+                                <Route exact path='/newSuspect'><CovidNewSuspect /></Route>
+                                <Route exact path='/suspectList'><CovidSuspectList /></Route>
+                                <Route exact path='/patientUpdate'><CovidPatientUpdate /></Route>
+                                <Route exact path='/donationEntry'><DonationEntry /></Route>
+                                <Route exact path='/donationTracking'><DonationTracking /></Route>
                             </Switch>
                         </Container>
                    
