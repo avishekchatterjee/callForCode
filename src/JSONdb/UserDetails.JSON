@@ -2,19 +2,17 @@
   {
     "id": 1,
     "MobileNo": 9000000000,
-    "Name": 'Test',
+    "Name": "Test",
     "PinCode": 700001,
     "GovtOfficial": true,
-    "GovtID": 12345,
-    
+    "GovtID": 12345    
   },
   {
     "id": 2,
     "MobileNo": 9000000001,
-    "Name": 'Test1',
+    "Name": "Test1",
     "PinCode": 700002,
     "GovtOfficial": false,
-    "GovtID": 0,
-    
+    "GovtID": 0    
   }
 ]

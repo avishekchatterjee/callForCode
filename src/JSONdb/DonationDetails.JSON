@@ -3,9 +3,9 @@
     "id": 1,
     "DonationDetails": [
       {
-        "ItemDetails": 'Medicine',
+        "ItemDetails": "Medicine",
         "ItemQuantity": 5,
-        "DonationNote": '',
+        "DonationNote": "",
         "PinCode": 700001
       }
     ]
@@ -14,9 +14,9 @@
     "id": 2,
     "DonationDetails": [
       {
-        "ItemDetails": 'Grocery',
+        "ItemDetails": "Grocery",
         "ItemQuantity": 10,
-        "DonationNote": '',
+        "DonationNote": "",
         "PinCode": 700015
       }
     ]
@@ -25,9 +25,9 @@
     "id": 2,
     "DonationDetails": [
       {
-        "ItemDetails": 'Fruit',
+        "ItemDetails": "Fruit",
         "ItemQuantity": 15,
-        "DonationNote": '',
+        "DonationNote": "",
         "PinCode": 700002
       }
     ]
