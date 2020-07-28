@@ -91,15 +91,15 @@ body {
   color: #0f0f71;
 }
 
-a {
+/* a {
   text-decoration: none;
 }
 
 nav {
     font-family: monospace;
-}
+} */
 
-ul {
+/* ul {
   background: darkorange;
   list-style: none;
   margin: 0;
@@ -115,17 +115,17 @@ li {
   position: relative;
   text-decoration: none;
   transition-duration: 0.5s;
-}
+} */
   
-li a {
+/* li a {
   color: #fff;
 }
 
 li:hover {
     background: red;
     cursor: pointer;
-}
-
+} */
+/* 
 ul li ul {
   background: orange;
   visibility: hidden;
@@ -136,9 +136,9 @@ ul li ul {
   margin-top: 1rem;
   left: 0;
   display: none;
-}
+} */
 
-ul li:hover > ul,
+/* ul li:hover > ul,
 ul li ul:hover {
   visibility: visible;
   opacity: 1;
@@ -148,7 +148,7 @@ ul li ul:hover {
 ul li ul li {
     clear: both;
   width: 100%;
-}
+} */
 
 /***New Addition by Sandipta****/
 *{
@@ -204,4 +204,9 @@ ul li ul li {
   min-height: calc(100vh - 7rem);
   overflow: auto;
   padding: 0.5rem;
+}
+
+.suspect-info{
+  list-style: none;
+  padding: 0;
 }
