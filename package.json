@@ -1,7 +1,11 @@
 {
   "name": "call-for-code",
+  "main": "server.js",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "engines": {
+    "node": "10.*"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
