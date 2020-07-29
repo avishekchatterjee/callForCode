@@ -20,7 +20,7 @@ class COVIDPatientDetails extends Component {
     componentDidMount() {
         if (covidData.length > 0) {
             const covidPatientList = covidData.filter((row) => {
-                return row.COVIDConfirm === true;
+                return row.COVIDConfirm === true && row.PatientCured === false ;
             });
             this.setState({ covidPatientList });
         }
