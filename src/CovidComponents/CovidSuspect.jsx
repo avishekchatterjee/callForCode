@@ -22,8 +22,8 @@ class CovidSuspect extends Component {
                     </div>
                     <div className='textbox'>
                         <span className='left-span'>Address</span>
-                        <span><input type='textArea'  
-                            onChange={(e) => this.props.onChangeHandler(e, 'mobNumber')} /></span>
+                        <span><input type='textArea'  value={this.props.address}
+                            onChange={(e) => this.props.onChangeHandler(e, 'address')} /></span>
                     </div>
                     <div className='textbox'>
                         <span className='left-span'>Area Pin</span>
