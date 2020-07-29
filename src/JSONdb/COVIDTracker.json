@@ -2,7 +2,7 @@
   {
     "id": 1,
     "COVIDSuspect": true,
-    "COVIDConfirm": false,
+    "COVIDConfirm": true,
     "PatientCured": false,
     "COVIDRepeat": false,
     "PreCOVIDPatientID": "",
@@ -29,13 +29,17 @@
             "patientID": "COVID456"
           }
         ]
-      },    
-    "EntryBy": 12345
+      },  
+    "SuspectReportedBy": 0,  
+    "UpdatedBy": 12345
   },
   {
     "id": 2,
-    "COVIDSuspect": false,
-    "COVIDConfirm": false,
+    "COVIDSuspect": true,
+    "COVIDConfirm": true,
+    "PatientCured": false,
+    "COVIDRepeat": false,
+    "PreCOVIDPatientID": "",
     "PatientDetails": 
       {
         "PatientID": "COVID1233",
@@ -60,6 +64,7 @@
           }
         ]
       },
-    "EntryBy": 12345
+      "SuspectReportedBy": 0,  
+      "UpdatedBy": 12345
   }
 ]
