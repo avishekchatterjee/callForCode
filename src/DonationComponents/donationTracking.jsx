@@ -45,6 +45,9 @@ class donationTracking extends Component {
                                     <Card.Title>{row.ItemDetails}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">Quentity - {row.ItemQuantity}</Card.Subtitle>
                                     <Card.Subtitle className="mb-1 text-muted">
+                                        Address - {row.Address}
+                                    </Card.Subtitle>   
+                                    <Card.Subtitle className="mb-1 text-muted">
                                         PinCode - {row.PinCode}
                                     </Card.Subtitle>                                       
                                 </Card.Body>

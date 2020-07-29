@@ -70,7 +70,8 @@ class COVIDPatientDetails extends Component {
                 No Active COVID Record Found
                 </div>
             </>
-        )
+            
+        )        
     }
 }
 

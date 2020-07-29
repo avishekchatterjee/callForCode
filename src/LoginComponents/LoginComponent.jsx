@@ -28,6 +28,11 @@ class LoginComponent extends Component {
                         <button className={submitDisabled ? 'btn disabled' : 'btn'} onClick={this.props.login}>Log in</button>
                     </div>
                 </div>
+                <div className='details-block-left'>
+                    <div>
+                        <button className='btn' style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
+                    </div>
+                </div>
             </div>
         )
     }
