@@ -9,6 +9,7 @@ import CovidSuspectList from '../CovidComponents/CovidSuspectList';
 import CovidPatientUpdate from '../CovidComponents/COVIDPatientUpdate';
 import DonationEntry from '../DonationComponents/donationEntry';
 import DonationTracking from '../DonationComponents/donationTracking';
+import COVIDPatientDetails from '../CovidComponents/COVIDPatientDetails';
 /**Bootstrap imports**/
 import { Container } from 'react-bootstrap';
 
@@ -65,6 +66,7 @@ export default class Root extends Component {
                                 <Route exact path='/patientUpdate'><CovidPatientUpdate /></Route>
                                 <Route exact path='/donationEntry'><DonationEntry /></Route>
                                 <Route exact path='/donationTracking'><DonationTracking /></Route>
+                                <Route exact path='/patientList'><COVIDPatientDetails /></Route>
                             </Switch>
                         </Container>
                    

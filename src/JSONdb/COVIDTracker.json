@@ -3,6 +3,9 @@
     "id": 1,
     "COVIDSuspect": true,
     "COVIDConfirm": false,
+    "PatientCured": false,
+    "COVIDRepeat": false,
+    "PreCOVIDPatientID": "",
     "PatientDetails": 
       {
         "PatientID": "COVID123",

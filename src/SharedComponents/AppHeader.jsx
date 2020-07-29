@@ -24,6 +24,7 @@ const AppHeader = (props) => {
                         <NavDropdown.Item href="/newSuspect">New Suspect</NavDropdown.Item>
                         <NavDropdown.Item href="/suspectList">Suspect Tracking</NavDropdown.Item>
                         <NavDropdown.Item href="/patientUpdate">Patient Update</NavDropdown.Item>
+                        <NavDropdown.Item href="/patientList">Patient List</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link className='nav-links' onClick={() => logout()}>Logout</Nav.Link>
                     <Nav.Link as={Link} className='nav-links' to='/signup'>Sign Up</Nav.Link>
