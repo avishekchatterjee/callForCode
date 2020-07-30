@@ -92,12 +92,12 @@ class SignUpComponent extends Component {
 const mapStateToProps = state => {
     console.log('state', state);
     return {
-        name: state.name,
-        mobNumber: state.mobNumber,
-        otp: state.otp,
-        areaPin: state.areaPin,
-        govtId: state.govtId,
-        submitted: state.submitted
+        name: state.loginReducers.name,
+        mobNumber: state.loginReducers.mobNumber,
+        otp: state.loginReducers.otp,
+        areaPin: state.loginReducers.areaPin,
+        govtId: state.loginReducers.govtId,
+        submitted: state.loginReducers.submitted
     }
 }
 

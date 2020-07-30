@@ -71,10 +71,10 @@ class LoginComponent extends Component {
 const mapStateToProps = state => {
     console.log('map', state);
     return {
-        mobNumber: state.mobNumber,
-        loginOtp: state.loginOtp,
-        submitted: state.submitted,
-        loggedIn: state.loggedIn
+        mobNumber: state.loginReducers.mobNumber,
+        loginOtp: state.loginReducers.loginOtp,
+        submitted: state.loginReducers.submitted,
+        loggedIn: state.loginReducers.loggedIn
     }
 }
 

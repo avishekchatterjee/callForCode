@@ -1,20 +1,23 @@
 import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import Root from './LoginComponents/Root';
 import { loginReducers } from './LoginComponents/loginReducers';
 import { signUp, logIn } from './LoginComponents/loginSagas';
+import { donationReducers } from './DonationComponents/donationReducers';
+import { donationEntrySubmit } from './DonationComponents/donationSagas';
 
 /*Css imports*/
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(loginReducers, applyMiddleware(sagaMiddleware));
+  const store = createStore(combineReducers({loginReducers,donationReducers}), applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(signUp);
   sagaMiddleware.run(logIn);
+  sagaMiddleware.run(donationEntrySubmit);
 
   return (
     <Provider store={store}>
