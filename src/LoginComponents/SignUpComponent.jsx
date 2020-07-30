@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { onChangeHandler, signUp } from './loginActions';
+import { Redirect } from 'react-router-dom';
 
 class SignUpComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {mobileNumberGiven: false}
+    }
+
+    enterMobile = () =>{
+        this.setState({mobileNumberGiven: true});
     }
 
     openLink = () =>{
@@ -15,7 +20,15 @@ class SignUpComponent extends Component {
           );
     }
 
+    signUp = () => {
+        this.props.signUp(this.props);
+    }
+
     render() {
+        if(this.props.submitted){
+            return <Redirect to="/login"/>
+        }
+
         const submitDisabled = (this.props.name.trim() === '' || this.props.mobNumber.trim() === ''
             || this.props.otp.trim() === '' || this.props.areaPin.trim() === '');
         return (
@@ -34,34 +47,42 @@ class SignUpComponent extends Component {
                         <span><input type='text' maxLength='10' value={this.props.mobNumber}
                             onChange={(e) => this.props.onChangeHandler(e, 'mobNumber')} /></span>
                     </div>
-                    <div className='textbox'>
-                        <span className='left-span'>OTP</span>
-                        <span><input type='text' maxLength='6' value={this.props.otp}
-                            onChange={(e) => this.props.onChangeHandler(e, 'otp')} /></span>
-                    </div>
-                    <div className='textbox'>
-                        <span className='left-span'>Area Pin</span>
-                        <span><input type='text' maxLength='6' value={this.props.areaPin}
-                            onChange={(e) => this.props.onChangeHandler(e, 'areaPin')} /></span>
-                    </div>
+                    {!this.state.mobileNumberGiven &&
+                        <div className='submit'>
+                            <button className='btn' onClick={this.enterMobile}>Get OTP</button>
+                        </div>
+                    }
+                    {this.state.mobileNumberGiven &&
+                        <>
+                            <div className='textbox'>
+                                <span className='left-span'>OTP</span>
+                                <span><input type='text' maxLength='6' value={this.props.otp}
+                                    onChange={(e) => this.props.onChangeHandler(e, 'otp')} /></span>
+                            </div>
+                            <div className='textbox'>
+                                <span className='left-span'>Area Pin</span>
+                                <span><input type='text' maxLength='6' value={this.props.areaPin}
+                                    onChange={(e) => this.props.onChangeHandler(e, 'areaPin')} /></span>
+                            </div>
 
-                    <div className='textbox'>
-                        <span className='left-span'>Govt ID</span>
-                        <span><input type='text' maxLength='5' value={this.props.govtId}
-                            onChange={(e) => this.props.onChangeHandler(e, 'govtId')} /></span>
-                    </div>
-
-                    <div className='submit '>
-                        <button className={submitDisabled ? 'btn disabled' : 'btn'} onClick={this.props.signUp}>Sign Up</button>
-                    </div>
+                            <div className='textbox'>
+                                <span className='left-span'>Govt ID</span>
+                                <span><input type='text' maxLength='5' value={this.props.govtId}
+                                    onChange={(e) => this.props.onChangeHandler(e, 'govtId')} /></span>
+                            </div>
+                            <div className='submit '>
+                                <button className={submitDisabled ? 'btn disabled' : 'btn'} onClick={this.signUp}>Sign Up</button>
+                            </div>
+                        </>
+                }
                 </div>
                 <div className='details-block-left'>
                     <div>
                         <button className='btn' onClick={this.openLink} style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
                     </div>
-                    <div className='covid-faq-box'>
+                    {/* <div className='covid-faq-box'>
                         Sign Up with some of your basic info to get personalised data for your area
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
@@ -83,7 +104,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onChangeHandler: (e, stateName) => { dispatch(onChangeHandler(e, stateName)) },
-        signUp: () => { dispatch(signUp()) }
+        signUp: (payload) => { dispatch(signUp(payload)) }
     }
 }
 
