@@ -8,6 +8,13 @@ class LoginComponent extends Component {
         this.state = {}
     }
 
+    openLink = () =>{
+        window.open(
+            'https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=47afdbae-d75e-4ed0-8f18-0938888d2fff&serviceInstanceID=e082c043-42fe-4831-ab3c-3b69af080ad3',
+            '_blank' // <- This is what makes it open in a new window.
+          );
+    }
+    
     render() {
         const submitDisabled = (this.props.mobNumber.trim() === '' || this.props.loginOtp.trim() === '');
         return (
@@ -30,7 +37,7 @@ class LoginComponent extends Component {
                 </div>
                 <div className='details-block-left'>
                     <div>
-                        <button className='btn' style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
+                        <button className='btn' onClick={this.openLink} style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,13 @@ class SignUpComponent extends Component {
         this.state = {}
     }
 
+    openLink = () =>{
+        window.open(
+            'https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=47afdbae-d75e-4ed0-8f18-0938888d2fff&serviceInstanceID=e082c043-42fe-4831-ab3c-3b69af080ad3',
+            '_blank' // <- This is what makes it open in a new window.
+          );
+    }
+
     render() {
         const submitDisabled = (this.props.name.trim() === '' || this.props.mobNumber.trim() === ''
             || this.props.otp.trim() === '' || this.props.areaPin.trim() === '');
@@ -50,7 +57,7 @@ class SignUpComponent extends Component {
                 </div>
                 <div className='details-block-left'>
                     <div>
-                        <button className='btn' style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
+                        <button className='btn' onClick={this.openLink} style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
                     </div>
                     <div className='covid-faq-box'>
                         Sign Up with some of your basic info to get personalised data for your area
