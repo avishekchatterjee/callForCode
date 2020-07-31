@@ -25,8 +25,8 @@ export default class ChatBot extends Component {
                         loading && <span className="watson-loading">Watson thinking...</span>
                     }
                     {
-                        !loading &&  <>
-                            <input className="input-chatbot" name="chatinput" onChange={(e) => this.handleInputOnchange(e)} value={resetValue} />
+                        !loading && <>
+                            <input className="input-chatbot" name="chatinput" onChange={(e) => this.handleInputOnchange(e)} value={resetValue} onKeyDown={this.handleEnterForSubmit} />
                             <button className="btn-primary send-btn" onClick={this.handleChatSend}>SEND</button>
                         </>
                     }
@@ -37,9 +37,18 @@ export default class ChatBot extends Component {
         )
     }
 
-    handleInputOnchange(e) {
+    handleInputOnchange=(e)=>{
         const value = e.target.value;
         this.setState({ inputValue: value, resetValue: value });
+    }
+
+    handleEnterForSubmit=(e)=> {
+        const { inputValue } = this.state;
+       if(inputValue.trim() !== ''){
+            if (e.key === 'Enter') {
+            this.handleChatSend();
+          }
+       }
     }
 
     handleChatSend = () => {
@@ -63,7 +72,7 @@ export default class ChatBot extends Component {
                 "alternate_intents": true
             }
 
-            this.setState({loading: true});
+            this.setState({ loading: true });
 
             API.post('api/ChatBot/stateWiseData',
                 payload).then((resp) => {
@@ -94,7 +103,7 @@ export default class ChatBot extends Component {
                 }).finally(() => {
                     const ele = document.querySelector(".chatbot-result-area");
                     ele.scrollTop = ele.scrollHeight;
-                    this.setState({loading: false});
+                    this.setState({ loading: false });
                 });
         }
     }
