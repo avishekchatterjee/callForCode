@@ -29,7 +29,7 @@ const AppHeader = (props) => {
                         <NavDropdown.Item as={Link} className='nav-links' to="/donationTracking">Tracking</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Covid" id="basic-nav-dropdown2">
-                        <NavDropdown.Item as={Link} className='nav-links' to="/newSuspect">New Suspect</NavDropdown.Item>
+                        {props.loggedIn && <NavDropdown.Item as={Link} className='nav-links' to="/newSuspect">New Suspect</NavDropdown.Item>}
                         <NavDropdown.Item as={Link} className='nav-links' to="/suspectList">Suspect Tracking</NavDropdown.Item>
                         {props.loggedIn && props.loggedInUserProfile.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientUpdate">Patient Update</NavDropdown.Item>}
                         {props.loggedIn && props.loggedInUserProfile.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientList">Patient List</NavDropdown.Item>}

@@ -76,14 +76,7 @@ class SignUpComponent extends Component {
                         </>
                 }
                 </div>
-                <div className='details-block-left'>
-                    <div>
-                        <button className='btn' onClick={this.openLink} style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
-                    </div>
-                    {/* <div className='covid-faq-box'>
-                        Sign Up with some of your basic info to get personalised data for your area
-                    </div> */}
-                </div>
+               
             </div>
         )
     }

@@ -215,13 +215,17 @@ ul li ul li {
   width: 20rem;
   bottom: 0;
   position: fixed;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   float: right;
   margin-right: 2rem;
   border: 1px solid #000;
   right: 0;
   z-index: 1;
   background-color: #fff;
+}
+.chatbot-container
+{
+  font-size: 0.8rem;
 }
 
 .chat-lower-bar{
@@ -236,7 +240,7 @@ ul li ul li {
 .chatbot-result-area{
   padding: 0.2rem;
   margin: 0.5rem 0.25rem;
-  height: 10rem;
+  height: 15rem;
   border: 3px solid #9db6c1;
   white-space: pre-line;
   word-break: break-word;
@@ -296,8 +300,9 @@ ul li ul li {
 }
 
 .watson-loading{
-  color: #99499e;
+  color: #1e1507;
   display: block;
   font-style: italic;
-  text-shadow: 2px 2px 2px #a57b2e;
+  text-shadow: 2px 2px 4px #6cbdc4;
+  font-weight: 600;
 }
