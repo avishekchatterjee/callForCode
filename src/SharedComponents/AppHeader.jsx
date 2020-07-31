@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { logout } from '../LoginComponents/loginActions';
@@ -8,14 +8,14 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 const AppHeader = (props) => {
 
-    const logout = () => {
-        props.logout();
+    const history = useHistory();
+
+    const logout = async () => {
+        await props.logout();
+        history.push("/login");
     }
 
-
-
     return (
-
         <Navbar bg="dark" variant="dark  " expand="lg">
             <Navbar.Brand className="mr-0"> <img src='img/CallForCodeLogo.png' alt='callForCodeImg' style={{ width: '4rem' }}></img></Navbar.Brand>
             <span className="mr-auto portal-title">Call For Code COVID-2019 Portal</span>
@@ -31,8 +31,8 @@ const AppHeader = (props) => {
                     <NavDropdown title="Covid" id="basic-nav-dropdown2">
                         <NavDropdown.Item as={Link} className='nav-links' to="/newSuspect">New Suspect</NavDropdown.Item>
                         <NavDropdown.Item as={Link} className='nav-links' to="/suspectList">Suspect Tracking</NavDropdown.Item>
-                        {props.loggedIn && props.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientUpdate">Patient Update</NavDropdown.Item>}
-                        {props.loggedIn && props.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientList">Patient List</NavDropdown.Item>}
+                        {props.loggedIn && props.loggedInUserProfile.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientUpdate">Patient Update</NavDropdown.Item>}
+                        {props.loggedIn && props.loggedInUserProfile.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientList">Patient List</NavDropdown.Item>}
                     </NavDropdown>
                     {props.loggedIn && <Nav.Link className='nav-links' onClick={logout}>Logout</Nav.Link>}
                     {!props.loggedIn && <Nav.Link as={Link} className='nav-links' to='/signup'>Sign Up</Nav.Link>}
