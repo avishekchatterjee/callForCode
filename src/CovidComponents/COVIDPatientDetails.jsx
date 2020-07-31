@@ -34,7 +34,7 @@ class COVIDPatientDetails extends Component {
                 {covidPatientList.length > 0 && covidPatientList.map((row) => {
                     return (                       
                         <Row key={row.id}>
-                            <Col xs={12} sm={6} style={{ height: '10rem' }}>
+                            <Col xs={12} sm={6} style={{ height: '12rem' }}>
                                 <Card>
                                     <Card.Body>
                                         <Card.Title>{row.PatientDetails.PatientName}</Card.Title>
@@ -45,12 +45,12 @@ class COVIDPatientDetails extends Component {
                                         <Card.Subtitle className="mb-1 text-muted">
                                             Patient Condition - {row.PatientDetails.PatientCondition}
                                         </Card.Subtitle>                                       
-                                        <Card.Text>                                        
+                                        <Card.Subtitle className="mb-1 text-muted">                                        
                                             Address - {row.PatientDetails.Address}
-                                        </Card.Text>
-                                        <Card.Text>
+                                        </Card.Subtitle>
+                                        <Card.Subtitle className="mb-1 text-muted">
                                             Pin - {row.PatientDetails.PinCode}
-                                        </Card.Text>                                       
+                                        </Card.Subtitle>                                       
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -65,9 +65,6 @@ class COVIDPatientDetails extends Component {
                 }
                 )
                 }
-                <div>
-                No Active COVID Record Found
-                </div>
             </>
             
         )        

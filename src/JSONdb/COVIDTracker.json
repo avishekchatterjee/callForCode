@@ -34,5 +34,41 @@
       },  
     "SuspectReportedBy": 0,  
     "UpdatedBy": 12345
+  },
+  {
+    "id": 2,
+    "COVIDSuspect": true,
+    "COVIDConfirm": true,
+    "PatientCured": false,
+    "COVIDRepeat": false,
+    "PreCOVIDPatientID": "",
+    "PatientDetails": 
+      {
+        "PatientID": "COVID123",
+        "PatientName": "name1",
+        "Age":"",
+        "IsolationStartDate": "",
+        "IsolationEndDate": "",
+        "Address": "address1",
+        "PinCode": 121212,
+        "PatientCondition": "Normal",
+        "EmergencyContact": "",
+        "TravelHistory": false,
+        "TravleDetails":"travel1",
+        "FamilyDetails": [
+          {
+            "MemberName": "",
+            "RelationShip": "",
+            "patientID": ""
+          },
+          {
+            "MemberName": "",
+            "RelationShip": "",
+            "patientID": "COVID456"
+          }
+        ]
+      },  
+    "SuspectReportedBy": 0,  
+    "UpdatedBy": 12345
   }
 ]
