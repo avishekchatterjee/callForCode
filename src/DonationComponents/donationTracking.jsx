@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-import donationData from '../JSONdb/DonationDetails.json';
-
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -18,7 +13,7 @@ export default class donationTracking extends Component {
 
     componentDidMount() {
         let formData = {donateItem:'', pincode: ''}
-        const donationData = fetch('https://cfc2020apis.azurewebsites.net/api/Donation/fetchDonation', {
+        fetch('https://cfc2020apis.azurewebsites.net/api/Donation/fetchDonation', {
             method: 'POST',
             headers: {'content-type': 'application/json;charset=utf-8'},
             body: JSON.stringify(formData)

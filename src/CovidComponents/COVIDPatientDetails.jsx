@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import covidData from '../JSONdb/COVIDTracker.json';
 
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -76,7 +75,6 @@ class COVIDPatientDetails extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('state', state);
 
 }
 

@@ -90,7 +90,6 @@ class SignUpComponent extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('state', state);
     return {
         name: state.loginReducers.name,
         mobNumber: state.loginReducers.mobNumber,

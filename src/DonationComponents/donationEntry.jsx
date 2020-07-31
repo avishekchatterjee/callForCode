@@ -76,7 +76,6 @@ class donationEntry extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('state', state);
     return{
         donationItemName: state.donationReducers.donationItemName,
         donationQuantity: state.donationReducers.donationQuantity,

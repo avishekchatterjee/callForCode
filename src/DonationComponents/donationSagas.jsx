@@ -1,7 +1,6 @@
-import { takeEvery, put, delay } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 
 function* donateEntrySaga(action) {
-    console.log('actions', action);
     let formData = {
         "donateItem": action.payload.donationItemName,
         "itemQuantity": Number(action.payload.donationQuantity),
@@ -16,7 +15,7 @@ function* donateEntrySaga(action) {
         headers: {'content-type': 'application/json;charset=utf-8'},
         body: JSON.stringify(formData)
     }).then(response => response.json(), );
-    yield put({ type: 'ON_DONATE_ENTRY' });
+    yield put({ type: 'ON_DONATE_ENTRY', response });
 }
 
 export function* donationEntrySubmit() {

@@ -18,6 +18,7 @@ import { Container } from 'react-bootstrap';
 export default class Root extends Component {
     constructor(props) {
         super(props);        
+        this.state={}
     }
     
     render() {

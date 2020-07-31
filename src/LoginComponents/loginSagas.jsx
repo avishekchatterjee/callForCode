@@ -20,7 +20,6 @@ function* signUpSaga(action) {
 function* logInSaga(action) {
     let jsonOutput = yield fetch('https://cfc2020apis.azurewebsites.net/'+action.mobNumber)
         .then(response => response.json(), );
-        console.log(jsonOutput)
     yield put({ type: 'ON_LOG_IN', jsonOutput });
 }
 

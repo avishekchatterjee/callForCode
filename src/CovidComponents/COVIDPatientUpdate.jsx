@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-class COVIDPatientUpdate extends Component {
+export default class COVIDPatientUpdate extends Component {
     constructor(props) {
         super(props);
-        this. state = {
-          }
+        this.state = {}
     }
 
     openLink = () =>{
@@ -120,14 +118,3 @@ class COVIDPatientUpdate extends Component {
         )
     }
 }
-
-const mapStateToProps = state => {
-    console.log('state', state);
-   
-}
-
-const mapDispatchToProps = dispatch => {
-   
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(COVIDPatientUpdate);
