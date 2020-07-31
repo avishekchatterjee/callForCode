@@ -1,4 +1,4 @@
-import { takeEvery, put, delay } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 
 function* signUpSaga(action) {
     let formData = {

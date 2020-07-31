@@ -6,7 +6,8 @@ const initialState = {
     loginOtp: '',
     govtId: '',
     submitted: false,
-    loggedIn: false
+    loggedIn: false,
+    loginError: false
 }
 
 export const loginReducers = (state = initialState, action) => {
@@ -28,14 +29,23 @@ export const loginReducers = (state = initialState, action) => {
                 return state;
             }
         case 'ON_SIGN_UP':
+            console.log('actions', action);
             return {
                 ...state,
                 submitted: true
             }
         case 'ON_LOG_IN':
-            return {
-                ...state,
-                loggedIn: true
+            if(action.jsonOutput.message === 'Login failed'){
+                return {
+                    ...state,
+                    loggedIn: false,
+                    loginError: true
+                }
+            }else{
+                return {
+                    ...state,
+                    loggedIn: true
+                }
             }
         default:
             return state;

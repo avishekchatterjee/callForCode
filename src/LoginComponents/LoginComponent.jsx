@@ -18,12 +18,10 @@ class LoginComponent extends Component {
     
     enterMobile = () =>{
         this.setState({mobileNumberGiven: true});
-        console.log('enter');
     }
 
     login = async() => {
-        await this.props.login(this.props.mobNumber);
-        console.log("thisprops", this.props);        
+        await this.props.login(this.props.mobNumber);      
     }
 
     render() {
@@ -33,6 +31,9 @@ class LoginComponent extends Component {
         const submitDisabled = (this.props.mobNumber.trim() === '' || this.props.loginOtp.trim() === '');
         return (
             <div>
+                {this.props.loginError &&
+                    <div className='App' style={{'color':'red'}}>Login Error</div>
+                }
                 <div className='header-box'>Login With Your Mobile Number</div>
                 <div className='details-block-left'>
                     <div className='textbox'>
@@ -74,7 +75,8 @@ const mapStateToProps = state => {
         mobNumber: state.loginReducers.mobNumber,
         loginOtp: state.loginReducers.loginOtp,
         submitted: state.loginReducers.submitted,
-        loggedIn: state.loginReducers.loggedIn
+        loggedIn: state.loginReducers.loggedIn,
+        loginError: state.loginReducers.loginError
     }
 }
 
