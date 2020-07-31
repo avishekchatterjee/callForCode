@@ -12,8 +12,8 @@ export const donationReducers = (state = initialState, action) => {
     switch (action.type) {
         case 'ON_CHANGE_DONATE':
             let regexMatching = true;
-            if (action.payload.stateName === 'donationQuantity' || action.payload.donationPincode === 'mobNumber'
-                || action.payload.donationMobNumber === 'areaPin') {
+            if (action.payload.stateName === 'donationQuantity' || action.payload.stateName === 'donationMobNumber'
+                || action.payload.stateName === 'donationPincode') {
                 let reg = new RegExp('^[0-9]+$');
                 regexMatching = (reg.test(action.payload.value) || action.payload.value === '');
             }
