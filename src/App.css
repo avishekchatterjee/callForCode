@@ -210,3 +210,55 @@ ul li ul li {
   list-style: none;
   padding: 0;
 }
+
+.chat-div-main{
+  width: 20rem;
+  position: relative;
+  margin-bottom: 5rem;
+  float: right;
+  margin-right: 2rem; 
+  border: 1px solid #000;
+}
+
+.chat-lower-bar{
+  height: 2.2rem;
+  background-color: #1b8fce;
+  text-align: center;
+  line-height: 2;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;  
+}
+
+.chatbot-container{
+  
+}
+
+.chatbot-result-area{
+  padding: 0.2rem;
+  margin: 0.5rem 0.25rem;
+  height: 10rem;
+  border: 3px solid #9db6c1;
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-y: auto;
+}
+
+.chatbot-input-area{
+  margin: 0.4rem;  
+  line-height: 2;
+}
+
+.input-chatbot{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 2.5rem;
+  width: 78%;
+  resize: none;
+  display: inline-block;
+}
+
+.send-btn{
+  display: inline-block;
+  float: right;
+}

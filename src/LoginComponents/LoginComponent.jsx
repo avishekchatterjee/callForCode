@@ -58,12 +58,7 @@ class LoginComponent extends Component {
                             </div>
                         </>
                     }
-                </div>
-                <div className='details-block-left'>
-                    <div>
-                        <button className='btn' onClick={this.openLink} style={{ 'height': '80px', 'width': '250px' }}>All about Covid !!!</button>
-                    </div>
-                </div>
+                </div>                
             </div>
         )
     }
