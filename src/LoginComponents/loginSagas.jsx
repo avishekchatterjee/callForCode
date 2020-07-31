@@ -20,7 +20,12 @@ function* signUpSaga(action) {
 function* logInSaga(action) {
     let jsonOutput = yield fetch('https://cfc2020apis.azurewebsites.net/'+action.mobNumber)
         .then(response => response.json(), );
+        console.log(jsonOutput)
     yield put({ type: 'ON_LOG_IN', jsonOutput });
+}
+
+function* logOutSaga(){
+    yield put({ type: 'ON_LOG_OUT'});
 }
 
 export function* signUp(action) {
@@ -29,4 +34,8 @@ export function* signUp(action) {
 
 export function* logIn() {
     yield takeEvery('LOG_IN', logInSaga);
+}
+
+export function* logOut() {
+    yield takeEvery('LOG_OUT', logOutSaga);
 }

@@ -9,3 +9,9 @@ export const signUp = payload => {
 export const login = payload => {
     return { type: 'LOG_IN', mobNumber: payload }
 }
+
+export const logout = () => {
+    return { 
+        type: 'LOG_OUT'
+    }
+}

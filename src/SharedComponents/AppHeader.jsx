@@ -1,15 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { logout } from '../LoginComponents/loginActions';
 /**Bootstrap imports**/
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 const AppHeader = (props) => {
 
     const logout = () => {
-        console.log('Logout function')
+        props.logout();
     }
 
+
+
     return (
+
         <Navbar bg="dark" variant="dark  " expand="lg">
             <Navbar.Brand className="mr-0"> <img src='img/CallForCodeLogo.png' alt='callForCodeImg' style={{ width: '4rem' }}></img></Navbar.Brand>
             <span className="mr-auto portal-title">Call For Code COVID-2019 Portal</span>
@@ -17,22 +23,41 @@ const AppHeader = (props) => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown title="Donation" id="basic-nav-dropdown1">
-                        <NavDropdown.Item as={Link} className='nav-links' to="/donationEntry">Entry</NavDropdown.Item>
+                        {
+                            props.loggedIn && <NavDropdown.Item as={Link} className='nav-links' to="/donationEntry">Entry</NavDropdown.Item>
+                        }
                         <NavDropdown.Item as={Link} className='nav-links' to="/donationTracking">Tracking</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Covid" id="basic-nav-dropdown2">
                         <NavDropdown.Item as={Link} className='nav-links' to="/newSuspect">New Suspect</NavDropdown.Item>
                         <NavDropdown.Item as={Link} className='nav-links' to="/suspectList">Suspect Tracking</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} className='nav-links' to="/patientUpdate">Patient Update</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} className='nav-links' to="/patientList">Patient List</NavDropdown.Item>
+                        {props.loggedIn && props.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientUpdate">Patient Update</NavDropdown.Item>}
+                        {props.loggedIn && props.govtOfficial && <NavDropdown.Item as={Link} className='nav-links' to="/patientList">Patient List</NavDropdown.Item>}
                     </NavDropdown>
-                    <Nav.Link className='nav-links' onClick={() => logout()}>Logout</Nav.Link>
-                    <Nav.Link as={Link} className='nav-links' to='/signup'>Sign Up</Nav.Link>
-                    <Nav.Link as={Link} className='nav-links' to='/login'>Log In</Nav.Link>
-                </Nav>               
+                    {props.loggedIn && <Nav.Link className='nav-links' onClick={logout}>Logout</Nav.Link>}
+                    {!props.loggedIn && <Nav.Link as={Link} className='nav-links' to='/signup'>Sign Up</Nav.Link>}
+                    {!props.loggedIn && <Nav.Link as={Link} className='nav-links' to='/login'>Log In</Nav.Link>}
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
 };
 
-export default AppHeader;
+const mapStateToProps = state => {
+    return {
+        loggedIn: state.loginReducers.loggedIn,
+        loggedInUserProfile: state.loginReducers.userProfile
+
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        // onChangeHandler: (e, stateName) => { dispatch(onChangeHandler(e, stateName)) },
+        logout: () => {
+            dispatch(logout())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);

@@ -28,8 +28,7 @@ export const loginReducers = (state = initialState, action) => {
             } else {
                 return state;
             }
-        case 'ON_SIGN_UP':
-            console.log('actions', action);
+        case 'ON_SIGN_UP':           ;
             return {
                 ...state,
                 submitted: true
@@ -44,9 +43,16 @@ export const loginReducers = (state = initialState, action) => {
             }else{
                 return {
                     ...state,
-                    loggedIn: true
+                    loggedIn: true,
+                    userProfile:action.jsonOutput.value
                 }
             }
+        case 'ON_LOG_OUT':
+        return{
+            ...state,
+            loggedIn: false,
+            userProfile:null
+        }
         default:
             return state;
     }
